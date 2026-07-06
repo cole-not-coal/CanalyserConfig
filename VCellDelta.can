@@ -6,11 +6,104 @@ includes
 
 variables
 {
-  float delta;
+  float VMin;
 }
 
 on message CellStats3
 {
-  delta = this.VCellMax.phys - this.VCellMin.phys;
-  @CellData::VCellDelta = (double)delta;
+  @CellData::VCellDelta = this.VCellMax.phys - this.VCellMin.phys;
+  VMin = this.VCellMin;
+}
+
+on message CellVoltages
+{
+  @CellData::aVCellMargin[0] = this.VCell001.phys - VMin;
+  @CellData::aVCellMargin[1] = this.VCell002.phys - VMin;
+  @CellData::aVCellMargin[2] = this.VCell003.phys - VMin;
+  @CellData::aVCellMargin[3] = this.VCell004.phys - VMin;
+  @CellData::aVCellMargin[4] = this.VCell005.phys - VMin;
+  @CellData::aVCellMargin[5] = this.VCell006.phys - VMin;
+  @CellData::aVCellMargin[6] = this.VCell007.phys - VMin;
+  @CellData::aVCellMargin[7] = this.VCell008.phys - VMin;
+  @CellData::aVCellMargin[8] = this.VCell009.phys - VMin;
+  @CellData::aVCellMargin[9] = this.VCell010.phys - VMin;
+  @CellData::aVCellMargin[10] = this.VCell011.phys - VMin;
+  @CellData::aVCellMargin[11] = this.VCell012.phys - VMin;
+  @CellData::aVCellMargin[12] = this.VCell013.phys - VMin;
+  @CellData::aVCellMargin[13] = this.VCell014.phys - VMin;
+  @CellData::aVCellMargin[14] = this.VCell015.phys - VMin;
+  @CellData::aVCellMargin[15] = this.VCell016.phys - VMin;
+  @CellData::aVCellMargin[16] = this.VCell017.phys - VMin;
+  @CellData::aVCellMargin[17] = this.VCell018.phys - VMin;
+  @CellData::aVCellMargin[18] = this.VCell019.phys - VMin;
+  @CellData::aVCellMargin[19] = this.VCell020.phys - VMin;
+  @CellData::aVCellMargin[20] = this.VCell021.phys - VMin;
+  @CellData::aVCellMargin[21] = this.VCell022.phys - VMin;
+  @CellData::aVCellMargin[22] = this.VCell023.phys - VMin;
+  @CellData::aVCellMargin[23] = this.VCell024.phys - VMin;
+  @CellData::aVCellMargin[24] = this.VCell025.phys - VMin;
+  @CellData::aVCellMargin[25] = this.VCell026.phys - VMin;
+  @CellData::aVCellMargin[26] = this.VCell027.phys - VMin;
+  @CellData::aVCellMargin[27] = this.VCell028.phys - VMin;
+  @CellData::aVCellMargin[28] = this.VCell029.phys - VMin;
+  @CellData::aVCellMargin[29] = this.VCell030.phys - VMin;
+  @CellData::aVCellMargin[30] = this.VCell031.phys - VMin;
+  @CellData::aVCellMargin[31] = this.VCell032.phys - VMin;
+  @CellData::aVCellMargin[32] = this.VCell033.phys - VMin;
+  @CellData::aVCellMargin[33] = this.VCell034.phys - VMin;
+  @CellData::aVCellMargin[34] = this.VCell035.phys - VMin;
+  @CellData::aVCellMargin[35] = this.VCell036.phys - VMin;
+  @CellData::aVCellMargin[36] = this.VCell037.phys - VMin;
+  @CellData::aVCellMargin[37] = this.VCell038.phys - VMin;
+  @CellData::aVCellMargin[38] = this.VCell039.phys - VMin;
+  @CellData::aVCellMargin[39] = this.VCell040.phys - VMin;
+  @CellData::aVCellMargin[40] = this.VCell041.phys - VMin;
+  @CellData::aVCellMargin[41] = this.VCell042.phys - VMin;
+  @CellData::aVCellMargin[42] = this.VCell043.phys - VMin;
+  @CellData::aVCellMargin[43] = this.VCell044.phys - VMin;
+  @CellData::aVCellMargin[44] = this.VCell045.phys - VMin;
+  @CellData::aVCellMargin[45] = this.VCell046.phys - VMin;
+  @CellData::aVCellMargin[46] = this.VCell047.phys - VMin;
+  @CellData::aVCellMargin[47] = this.VCell048.phys - VMin;
+  @CellData::aVCellMargin[48] = this.VCell049.phys - VMin;
+  @CellData::aVCellMargin[49] = this.VCell050.phys - VMin;
+  @CellData::aVCellMargin[50] = this.VCell051.phys - VMin;
+  @CellData::aVCellMargin[51] = this.VCell052.phys - VMin;
+  @CellData::aVCellMargin[52] = this.VCell053.phys - VMin;
+  @CellData::aVCellMargin[53] = this.VCell054.phys - VMin;
+  @CellData::aVCellMargin[54] = this.VCell055.phys - VMin;
+  @CellData::aVCellMargin[55] = this.VCell056.phys - VMin;
+  @CellData::aVCellMargin[56] = this.VCell057.phys - VMin;
+  @CellData::aVCellMargin[57] = this.VCell058.phys - VMin;
+  @CellData::aVCellMargin[58] = this.VCell059.phys - VMin;
+  @CellData::aVCellMargin[59] = this.VCell060.phys - VMin;
+  @CellData::aVCellMargin[60] = this.VCell061.phys - VMin;
+  @CellData::aVCellMargin[61] = this.VCell062.phys - VMin;
+  @CellData::aVCellMargin[62] = this.VCell063.phys - VMin;
+  @CellData::aVCellMargin[63] = this.VCell064.phys - VMin;
+  @CellData::aVCellMargin[64] = this.VCell065.phys - VMin;
+  @CellData::aVCellMargin[65] = this.VCell066.phys - VMin;
+  @CellData::aVCellMargin[66] = this.VCell067.phys - VMin;
+  @CellData::aVCellMargin[67] = this.VCell068.phys - VMin;
+  @CellData::aVCellMargin[68] = this.VCell069.phys - VMin;
+  @CellData::aVCellMargin[69] = this.VCell070.phys - VMin;
+  @CellData::aVCellMargin[70] = this.VCell071.phys - VMin;
+  @CellData::aVCellMargin[71] = this.VCell072.phys - VMin;
+  @CellData::aVCellMargin[72] = this.VCell073.phys - VMin;
+  @CellData::aVCellMargin[73] = this.VCell074.phys - VMin;
+  @CellData::aVCellMargin[74] = this.VCell075.phys - VMin;
+  @CellData::aVCellMargin[75] = this.VCell076.phys - VMin;
+  @CellData::aVCellMargin[76] = this.VCell077.phys - VMin;
+  @CellData::aVCellMargin[77] = this.VCell078.phys - VMin;
+  @CellData::aVCellMargin[78] = this.VCell079.phys - VMin;
+  @CellData::aVCellMargin[79] = this.VCell080.phys - VMin;
+  @CellData::aVCellMargin[80] = this.VCell081.phys - VMin;
+  @CellData::aVCellMargin[81] = this.VCell082.phys - VMin;
+  @CellData::aVCellMargin[82] = this.VCell083.phys - VMin;
+  @CellData::aVCellMargin[83] = this.VCell084.phys - VMin;
+  @CellData::aVCellMargin[84] = this.VCell085.phys - VMin;
+  @CellData::aVCellMargin[85] = this.VCell086.phys - VMin;
+  @CellData::aVCellMargin[86] = this.VCell087.phys - VMin;
+  @CellData::aVCellMargin[87] = this.VCell088.phys - VMin;
+  
 }
