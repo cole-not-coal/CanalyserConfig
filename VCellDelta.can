@@ -1,0 +1,16 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  float delta;
+}
+
+on message CellStats3
+{
+  delta = this.VCellMax.phys - this.VCellMin.phys;
+  @CellData::VCellDelta = (double)delta;
+}
